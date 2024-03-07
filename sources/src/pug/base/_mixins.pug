@@ -1,0 +1,73 @@
+mixin picture(name = false, obj = {})
+    -
+        var src = obj.src == undefined ? './images/' : obj.src
+        var type = obj.type == undefined ? ['jpg', 'webp'] : [obj.type, 'webp']
+        var img = name
+        var sizes = obj.sizes == undefined ? {x1, x2} : obj.sizes
+        var alt = obj.alt == undefined ? 'img' : obj.alt
+        var mobileWidth = obj.mobileWidth == undefined ? '575' : obj.mobileWidth
+
+    if img
+        picture&attributes(attributes)
+            -
+                var index = 1
+                var webpSrcset = ''
+                var imgSrc = ''
+                var imgSrcset = ''
+            each val, key in sizes
+                -
+                    var size = key.split('').reverse().join('')
+                    var size = key.split('').reverse().join('')
+                    var length = Object.keys(sizes).length
+                    webpSrcset += `${src}${val ? val : img}@${size}.webp ${size}${index != length ? ',' : ''}`
+                    imgSrcset += `${src}${val ? val : img}@${size}.${type[0]} ${size}${index != length ? ',' : ''}`
+                    imgSrc.length <= 0 ? imgSrc = `${src}${val ? val : img}@${size}.${type[0]}` : false
+
+                if size == '1x'
+                    - var n = 1
+                    while n > -1
+                        - var t = type[n--]
+                        source(srcset=`${src}${val ? val : img}@${size}.${t}` media=`(max-width: ${mobileWidth}px)` type=(t == 'webp' ? "image/webp" : false))
+                - index++
+            source(srcset=webpSrcset type="image/webp")
+            img(src=imgSrc srcset=imgSrcset, alt=alt)
+    else
+        | Error: no image
+
+
+mixin use(name = '', obj = {})
+    -
+        let width = obj.w ?? 20
+        let height = obj.h ?? width
+    if name !== '' || typeof name !== 'string'
+        svg(width=width height=height viewBox=`0 0 ${width} ${height}`).use-icon&attributes(attributes)
+            use(xlink:href="images/sprites/main.stack.svg#image-" + name)
+    else
+        | 'Use' Error:
+        | no name
+
+mixin icon(name = '', obj = {})
+    -
+        obj = {...{
+            tag: 'span',
+            name: name
+        }, ...obj}
+    #{obj.tag}(class=`svg-image-${obj.name}`).icon&attributes(attributes)
+
+include ../blocks/_header
+include ../blocks/_footer
+include ../blocks/hero
+include ../blocks/search-employees
+include ../blocks/about
+include ../blocks/work-in-group
+include ../blocks/request-form
+
+
+include ../ui/button
+include ../ui/text
+include ../ui/title
+include ../ui/cards
+include ../ui/check-list
+include ../ui/ui-list
+include ../ui/form
+include ../ui/top-arrow

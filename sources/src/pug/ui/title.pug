@@ -1,0 +1,15 @@
+mixin title(obj = {})
+    -
+        obj = {
+            tag: 'h2',
+            title: '',
+            white: false,
+            big: false,
+            min: false,
+            ...obj
+        }
+    #{obj.tag}.title(
+        class = (obj.big ? 'title_big' : false)
+        class = (obj.min ? 'title_min' : false)
+        class = (obj.white ? 'title_white' : false)
+    )&attributes(attributes) !{obj.title}

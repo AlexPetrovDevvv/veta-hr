@@ -1,0 +1,39 @@
+mixin request-form(obj = {})
+    -
+        obj = {
+            tag: 'section',
+            title: '',
+            items: [
+                {
+                    type: '',
+                    name: '',
+                    placeholder: ''
+                }
+            ],
+            selectTitle: '',
+            options: [
+                {
+                    value: ''
+                }
+            ],
+            textareaPlaceholder: '',
+            checkboxText: '',
+            buttonText: '',
+            ...obj
+        }
+    #{obj.tag}.request-form.section&attributes(attributes)
+        .container
+            .wrapper
+                +title({
+                title: obj.title
+                })
+                +form({
+                    items: obj.items,
+                    selectTitle: obj.selectTitle,
+                    options: obj.options,
+                    textareaPlaceholder: obj.textareaPlaceholder,
+                    checkboxText: obj.checkboxText,
+                    buttonText: obj.buttonText,
+                }).request-form__form
+                .request-form__picture
+                    img(src="./images/traces.png", alt="")

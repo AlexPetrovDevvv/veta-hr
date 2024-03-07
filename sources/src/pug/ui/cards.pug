@@ -1,0 +1,53 @@
+mixin cards(obj = {})
+    -
+        obj = {
+            tag: 'div',
+            items: [
+                {
+                    title: '',
+                    text: '',
+                    href: '',
+                    linkText: '',
+                    src: ''
+                }
+            ],
+            ...obj
+        }
+    #{obj.tag}.card-list&attributes(attributes)
+        each item in obj.items
+            +card({
+                title: item.title,
+                text: item.text,
+                href: item.href,
+                linkText: item.linkText,
+                src: item.src
+            })
+
+mixin card(obj = {})
+    -
+        obj = {
+            tag: 'div',
+            title: '',
+            text: '',
+            href: '',
+            linkText: '',
+            src: '',
+            blue: true,
+            ...obj
+        }
+    #{obj.tag}.card&attributes(attributes)
+        +title({
+            tag: 'h3',
+            title: obj.title,
+            min: true,
+        }).card__title
+        +text({
+            text: obj.text
+        }).card__text
+        +button({
+            tag: 'a',
+            href: obj.href,
+            text: obj.linkText,
+            blue: obj.blue
+        }).card__link
+        img.card__picture(src=obj.src, alt="pictue")

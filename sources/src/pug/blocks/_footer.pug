@@ -1,0 +1,76 @@
+mixin footer(obj = {})
+    -
+        obj = {...{
+            tag: 'footer',
+            href: '#',
+            src: './images/logo.svg',
+            items: [
+                {
+                    href: '#',
+                    text: 'Студентам'
+                },
+                {
+                    href: '#',
+                    text: 'Профессионалам'
+                },
+                {
+                    href: '#',
+                    text: 'Вакансии'
+                },
+            ],
+            contactsTitle: 'Связаться с нами:',
+            numbers: [
+                {
+                    href: '#',
+                    text: '+7 (800) 775–04–99'
+                },
+                {
+                    href: '#',
+                    text: '+7 967 712-36-92'
+                },
+            ],
+            linkTextHref: '#',
+            linkText: 'veta.expert',
+            IconLink: '#',
+            addressTitle: 'Адреса:',
+            adressList: [
+                {
+                    text: 'Нижний Новгород, ул. Ульянова, д. 10а, вход 2, этаж 8'
+                },
+                {
+                    text: 'Москва, Бол. Строченовский пер., 7, Бизнес-центр Велка'
+                },
+            ],
+            copyright: '© 1999–2023 Экспертная группа Veta',
+            pryvacyLink: 'https://veta.expert/law/',
+            privacy: 'Политика конфиденциальности',
+            create: 'Сайт сделан в бюро Flavita'
+        }, ...obj}
+    #{obj.tag}.footer&attributes(attributes)
+        .container
+            .footer__main
+                a.footer__logo.logo(href=obj.href)
+                    img(src=obj.src, alt="logo")
+                .footer__content
+                    nav.footer__menu
+                        each item in obj.items
+                            a.footer__menu-item(href=item.href) !{item.text}
+                    .footer__contacts
+                        h4.footer__contacts-title !{obj.contactsTitle}
+                        .footer__phone-box
+                            each item in obj.numbers
+                                a.footer__phone(href=item.href) !{item.text}
+                        .footer__link-box
+                            a.footer__link(href=obj.linkTextHref) !{obj.linkText}
+                            a.footer__link-icon(href=obj.IconLink)
+                                img(src="./images/icons/vk.svg", alt="vk")
+                .footer__address-list
+                    h4.footer__contacts-title !{obj.addressTitle}
+                    each item in obj.adressList
+                        address.footer__address !{item.text}
+            .footer__sub
+                span.footer__sub-text !{obj.copyright}
+                a.footer__sub-text.footer__sub-text_link(
+                    href=obj.pryvacyLink
+                ) !{obj.privacy}
+                span.footer__sub-text !{obj.create}

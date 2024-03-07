@@ -1,0 +1,43 @@
+mixin about(obj = {})
+    -
+        obj = {
+            tag: 'section',
+            title: '',
+            text: '',
+            href: '',
+            linkText: '',
+            items: [
+                {
+                    title: '',
+                    items: [
+                        {
+                            text: ''
+                        }
+                    ]
+                }
+            ],
+            ...obj
+        }
+    #{obj.tag}.about.section&attributes(attributes)
+        .container
+            +title({
+                title: obj.title
+            }).about__title
+            +text({
+                text: obj.text,
+                description: true
+            }).about__text
+            .about__list-box
+                each item in obj.items
+                    +check-list({
+                        title: item.title,
+                        items: item.items
+                    }).about-list
+            +button({
+                tag: 'a',
+                href: obj.href,
+                text: obj.linkText,
+                blue: true
+            }).about__button
+            .about__picture
+                img(src="./images/wolf-about.png", alt="wolf")

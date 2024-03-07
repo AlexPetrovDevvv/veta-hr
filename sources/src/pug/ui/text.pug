@@ -1,0 +1,15 @@
+mixin text(obj = {})
+    -
+        obj = {
+            tag: 'p',
+            text: '',
+            big: false,
+            white: false,
+            description: false,
+            ...obj
+        }
+    #{obj.tag}.text(
+        class=(obj.big ? 'text_big' : false)
+        class=(obj.white ? 'text_white' : false)
+        class=(obj.description ? 'mt-42' : false)
+    )&attributes(attributes) !{obj.text}

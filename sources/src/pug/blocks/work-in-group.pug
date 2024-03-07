@@ -1,0 +1,22 @@
+mixin work-in-group(obj = {})
+    -
+        obj = {
+            tag: 'section',
+            title: '',
+            items: [
+                {
+                    icon: '',
+                    title: '',
+                    text: '',
+                }
+            ],
+            ...obj
+        }
+    #{obj.tag}.work-in-group.section.section_blue&attributes(attributes)
+        .container
+            +title({
+                title: obj.title
+            }).work-in-group__title
+            +ui-list({
+                items: obj.items
+            }).work-in-group__list

@@ -1,0 +1,136 @@
+@import "./vars"
+@import "./ui"
+@import "./mixins"
+@import "./fonts"
+@import "./sprite_generated"
+// From libs:
+//@import "../libs/LIB_NAME/path/to/style.scss"
+
+*
+    box-sizing: border-box
+    min-width: 0
+    min-height: 0
+    margin: 0
+    padding: 0
+    outline: none
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+    // min-height: 0.001vw; // — Fixes Safari bug with viewport units in calc()
+
+html.is-locked
+    height: calc(var(--window-height) - 1px)
+    overflow: hidden
+    body
+        overflow: visible
+        position: fixed
+        top: 0
+        left: 0
+        height: var(--window-height)
+
+html
+    overflow-x: hidden
+
+html, body
+    min-width: 360px
+
+body
+    overflow-x: hidden
+    display: flex
+    flex-direction: column
+    font-family: 'ComonsPro', 'Montserrat', sans-serif
+    width: 100%
+    height: 100%
+    min-height: 100vh
+    -webkit-font-smoothing: antialiased
+    -moz-osx-font-smoothing: grayscale
+    color: var(--blue)
+    background: var(--light-blue-bg)
+    position: relative
+    will-change: scroll-position
+
+section
+    flex: none
+
+h1, h2, h3, h4, h5, h6
+    font-weight: 700
+
+a
+    text-decoration: none
+
+blockquote, q
+    margin: 0
+    padding: 0
+    border: 0
+    outline: 0
+    vertical-align: baseline
+    background: transparent
+    quotes: none
+
+blockquote:before, blockquote:after,
+q:before, q:after
+    content: ''
+    content: none
+
+ul, ol
+    list-style: none
+
+picture, img
+    display: block
+    object-fit: cover
+picture
+    img
+        height: 100%
+        width: 100%
+
+button
+    font-size: 1em
+    cursor: pointer
+
+input, textarea, button
+    border-radius: 0
+    color: inherit
+    font-family: inherit
+    font-weight: inherit
+
+input[type=text]::-ms-clear
+    display: none
+    width: 0
+    height: 0
+input[type=text]::-ms-reveal
+    display: none
+    width: 0
+    height: 0
+
+.container
+    width: 100%
+    max-width: 1264px
+    padding: 0 20px
+    margin: 0 auto
+
+// .m
+//     &t
+//         $sizes: 100, 50
+//         @each $mt in $sizes
+//             &-#{$mt}
+//                 margin-top: #{$mt}px
+//         &-sm
+//             @media (max-width: $sm)
+//                 $sizes: 20, 10
+//                 @each $mt in $sizes
+//                     &-#{$mt}
+//                         margin-top: #{$mt}px
+
+.m
+    &t
+        $sizes: 42
+        @each $mt in $sizes
+            &-#{$mt}
+                margin-top: #{$mt}px
+
+.icon
+    display: block
+    flex: none
+
+.section
+    padding: 108px 0 144px
+    &_blue
+        background-color: var(--blue-bg)

@@ -1,0 +1,116 @@
+.form
+    &__content
+        display: flex
+        gap: 24px
+        &-left
+            display: flex
+            flex-direction: column
+            gap: 12px
+            flex: 1
+        &-right
+            display: flex
+            flex-direction: column
+            gap: 12px
+            flex: 1
+    &__input
+        width: 100%
+        padding: 14px 23px
+        background: var(--blue-bg)
+        border: 1px solid var(--light-gray)
+        border-radius: 6px
+        font-family: var(--second-family)
+        font-weight: 400
+        font-size: 14px
+        color: var(--blue)
+        transition: .3s ease-in-out
+        transition-property: border-color
+        &:focus
+            border-color: var(--red)
+    &__select
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        font-family: var(--second-family)
+        font-weight: 400
+        font-size: 14px
+        border-radius: 6px
+        z-index: -1
+        &-box
+            position: relative
+            z-index: 1
+            width: 100%
+            height: 46px
+            flex: none
+        &-field
+            width: 100%
+            padding: 14px 23px
+            background: var(--blue-bg)
+            border: 1px solid var(--light-gray)
+            border-radius: 6px
+            font-family: var(--second-family)
+            font-weight: 400
+            font-size: 14px
+            color: var(--blue)
+            transition: .3s ease-in-out
+            transition-property: border-color
+            cursor: pointer
+            pointer-events: none
+            display: flex
+            align-items: center
+            &::after
+                display: block
+                content: ''
+                background: url(../images/icons/arrow.svg)
+                width: 11px
+                height: 7px
+                margin-left: 12px
+    &__textarea
+        width: 100%
+        height: 100%
+        resize: none
+        padding: 14px 23px
+        background: var(--blue-bg)
+        border: 1px solid var(--light-gray)
+        border-radius: 6px
+        font-family: var(--second-family)
+        font-weight: 400
+        font-size: 14px
+        color: var(--blue)
+        transition: .3s ease-in-out
+        transition-property: border-color
+        &:focus
+            border-color: var(--red)
+    &__checkbox
+        display: none
+        &:checked ~ .form__checkbox-text:before
+            background: url(../images/icons/check.svg) no-repeat center center
+        &-box
+            display: block
+            max-width: 408px
+            width: 100%
+            margin-top: 24px
+        &-text
+            font-family: var(--second-family)
+            font-weight: 400
+            font-size: 14px
+            color: var(--gray)
+            display: flex
+            align-items: center
+            cursor: pointer
+            &:before
+                display: block
+                content: ''
+                border: 2px solid var(--gray)
+                width: 20px
+                height: 20px
+                margin-right: 16px
+            a
+                font-family: var(--second-family)
+                font-weight: 400
+                font-size: 14px
+                color: var(--gray)
+                text-decoration: underline
+    &__button
+        margin-top: 50px

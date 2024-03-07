@@ -1,0 +1,13 @@
+mixin button(obj = {})
+    -
+        obj = {
+            tag: 'button',
+            href: '',
+            text: '',
+            blue: false,
+            ...obj
+        }
+    #{obj.tag}.button.btn-red(
+        href=(obj.href ? obj.href : false)
+        class=(obj.blue ? "blue-dark" : false)
+    )&attributes(attributes) !{obj.text}

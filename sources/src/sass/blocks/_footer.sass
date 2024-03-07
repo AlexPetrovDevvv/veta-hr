@@ -1,0 +1,74 @@
+.footer
+    padding: 75px 0 51px
+    background-color: var(--blue)
+    &__main
+        display: flex
+    &__content
+        margin-left: 86px
+    &__menu
+        display: flex
+        gap: 50px
+        &-item
+            font-weight: 700
+            font-size: 16px
+            color: var(--footer-blue-text)
+    &__contacts
+        margin-top: 30px
+        &-title
+            font-weight: 700
+            font-size: 16px
+            color: var(--footer-blue-text)
+    &__phone
+        font-family: var(--font-family)
+        font-weight: 400
+        font-size: 14px
+        letter-spacing: 0.1em
+        text-transform: uppercase
+        color: var(--footer-blue-text)
+        &-box
+            display: flex
+            gap: 17px
+            margin-top: 13px
+    &__link
+        font-family: var(--font-family)
+        font-weight: 600
+        font-size: 14px
+        letter-spacing: 0.1em
+        text-decoration: underline
+        text-decoration-skip-ink: none
+        color: var(--footer-blue-text)
+        &-box
+            display: flex
+            align-items: center
+            gap: 24px
+            margin-top: 17px
+        &-icon
+            width: 32px
+            height: 32px
+            text-decoration: none
+            img
+                width: 100%
+                height: 100%
+                display: block
+    &__address
+        font-family: var(--font-family)
+        font-weight: 400
+        font-size: 14px
+        color: var(--footer-blue-text)
+        &:not(:first-child)
+            margin-top: 18px
+        &:first-child
+            margin-top: 13px
+        &-list
+            margin-left: auto
+    &__sub
+        margin-top: 100px
+        display: flex
+        justify-content: space-between
+        &-text
+            font-family: var(--second-family)
+            font-weight: 400
+            font-size: 14px
+            color: var(--dark-footer-blue-text)
+            &-link
+                cursor: pointer

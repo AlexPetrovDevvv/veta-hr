@@ -1,0 +1,32 @@
+mixin hero(obj = {})
+    -
+        obj = {
+            title: '',
+            text: '',
+            href: '',
+            linkText: '',
+            src: '',
+            tag: 'section',
+            ...obj
+        }
+    #{obj.tag}.hero&attributes(attributes)
+        .container
+            .hero__content
+                +title({
+                    tag: 'h1',
+                    title: obj.title,
+                    big: true,
+                    white: true
+                }).hero__title
+                +text({
+                    text: obj.text,
+                    big: true,
+                    white: true
+                }).hero__text
+                +button({
+                    tag: 'a',
+                    href: obj.href,
+                    text: obj.linkText,
+                }).hero__link
+            .hero__picture
+                img(src=obj.src, alt="wolf")

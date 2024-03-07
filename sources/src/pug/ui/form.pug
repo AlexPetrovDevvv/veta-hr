@@ -1,0 +1,102 @@
+mixin form(obj = {})
+    -
+        obj = {
+            tag: 'form',
+            items: [
+                {
+                    type: '',
+                    name: '',
+                    placeholder: ''
+                },
+            ],
+            selectTitle: '',
+            options: [
+                {
+                    value: ''
+                }
+            ],
+            textareaPlaceholder: '',
+            checkboxText: '',
+            buttonText: '',
+            ...obj
+        }
+    #{obj.tag}.form&attributes(attributes)
+        .form__content
+            .form__content-left
+                each item in obj.items
+                    +form-input({
+                        type: item.type,
+                        name: item.name,
+                        placeholder: item.placeholder,
+                    })
+            .form__content-right
+                +form-select({
+                    title: obj.selectTitle,
+                    options: obj.options
+                })
+                +form-textarea({
+                    placeholder: obj.textareaPlaceholder
+                })
+        +checkbox({
+            text: obj.checkboxText
+        })
+        +button({
+            text: obj.buttonText
+        }).form__button
+
+mixin form-input(obj = {})
+    -
+        obj = {
+            tag: 'input',
+            type: '',
+            name: '',
+            placeholder: '',
+            ...obj
+        }
+    #{obj.tag}.form__input(
+        type=obj.type
+        name=obj.name
+        placeholder=obj.placeholder
+
+    )&attributes(attributes)
+
+mixin form-select(obj = {})
+    -
+        obj = {
+            tag: 'div',
+            title: '',
+            options: [
+                {
+                    value: ''
+                }
+            ],
+            ...obj
+        }
+    #{obj.tag}.form__select-box&attributes(attributes)
+        .form__select-field !{obj.title}
+        select.form__select
+            option(value="" style="display: none;")
+            each option in obj.options
+                option(value=option.value) !{option.value}
+
+mixin form-textarea(obj = {})
+    -
+        obj = {
+            tag: 'textarea',
+            placeholder: '',
+            ...obj
+        }
+    #{obj.tag}.form__textarea(
+        placeholder=obj.placeholder
+    )&attributes(attributes)
+
+mixin checkbox(obj = {})
+    -
+        obj = {
+            tag: 'label',
+            text: '',
+            ...obj
+        }
+    #{obj.tag}.form__checkbox-box&attributes(attributes)
+        input(type="checkbox").form__checkbox
+        span.form__checkbox-text !{obj.text}

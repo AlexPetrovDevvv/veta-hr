@@ -1,0 +1,35 @@
+mixin header(obj = {})
+    -
+        obj = {...{
+            tag: 'header',
+            href: '#',
+            src: './images/logo.svg',
+            hrefPhone: '#',
+            phone: '+7 (800) 775–04–99',
+            items: [
+                {
+                    href: '#',
+                    text: 'Студентам'
+                },
+                {
+                    href: '#',
+                    text: 'Профессионалам'
+                },
+                {
+                    href: '#',
+                    text: 'Вакансии'
+                },
+                {
+                    href: '#',
+                    text: 'Мы ВКонтакте'
+                }
+            ]
+        }, ...obj}
+    #{obj.tag}.header&attributes(attributes)
+        .container
+            a.header__logo.logo(href=obj.href)
+                img(src=obj.src, alt="logo")
+            nav.header__menu.menu
+                each item in obj.items
+                    a.menu__item(href=item.href) !{item.text}
+            a.header__phone(href=obj.hrefPhone) !{obj.phone}

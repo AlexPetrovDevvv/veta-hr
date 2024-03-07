@@ -1,0 +1,26 @@
+mixin check-list(obj = {})
+    -
+        obj = {
+            tag: 'div',
+            title: '',
+            items: [
+                {
+                    text: ''
+                },
+            ],
+            ...obj
+        }
+    #{obj.tag}.check-list-box&attributes(attributes)
+        +title({
+            tag: 'h3',
+            title: obj.title,
+            min: true,
+        }).check-list__title
+        ul.check-list
+            each item in obj.items
+                li.check-list__item
+                    img(src="./images/icons/checkbox.svg", alt="✓")
+                    +text({
+                        tag: 'span',
+                        text: item.text
+                    })

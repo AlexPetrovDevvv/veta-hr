@@ -1,0 +1,46 @@
+mixin ui-list(obj = {})
+    -
+        obj = {
+            tag: 'ul',
+            items: [
+                {
+                    icon: '',
+                    title: '',
+                    text: '',
+                }
+            ],
+            ...obj
+        }
+    #{obj.tag}.ui-list&attributes(attributes)
+        each item in obj.items
+            +ui-list-item({
+                icon: item.icon,
+                title: item.title,
+                text: item.text,
+            })
+
+
+
+mixin ui-list-item(obj = {})
+    -
+        obj = {
+            tag: 'li',
+            icon: '',
+            title: '',
+            text: '',
+            ...obj
+        }
+    #{obj.tag}.ui-list__item(
+        class=(obj.icon ? "ui-list__item_flex" : false )
+    )&attributes(attributes)
+        if obj.icon
+            .ui-list__item-icon
+                img(src=obj.icon, alt="icon")
+        .ui-list__item-content
+            +title({
+                tag: 'h4',
+                title: obj.title
+            })
+            +text({
+                text: obj.text
+            })

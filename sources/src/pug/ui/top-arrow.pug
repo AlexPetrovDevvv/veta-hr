@@ -1,0 +1,9 @@
+mixin top-arrow(obj = {})
+    -
+        obj = {
+            tag: 'div',
+            ...obj
+        }
+    #{obj.tag}(
+        id="toTop"
+    )&attributes(attributes)

@@ -1,0 +1,31 @@
+mixin search-employees(obj = {})
+    -
+        obj = {
+            tag: 'section',
+            title: '',
+            items: [
+                {
+                    title: '',
+                    text: '',
+                    href: '',
+                    linkText: '',
+                    src: ''
+                },
+                {
+                    title: '',
+                    text: '',
+                    href: '',
+                    linkText: '',
+                    src: ''
+                }
+            ],
+            ...obj
+        }
+    #{obj.tag}.search-employees.section.section_blue&attributes(attributes)
+        .container
+            +title({
+                title: obj.title
+            }).search-employees__title
+            +cards({
+                items: obj.items
+            }).search-employees__list

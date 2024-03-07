@@ -1,0 +1,27 @@
+.ui-list
+    display: grid
+    grid-template-columns: repeat(2, 1fr)
+    gap: 46px 116px
+    &__item
+        max-width: 508px
+        width: 100%
+        &_flex
+            display: flex
+            gap: 30px
+        &-icon
+            width: 82px
+            height: 82px
+            border-radius: 50%
+            background-color: var(--blue)
+            display: flex
+            align-items: center
+            justify-content: center
+            flex: none
+            img
+                display: block
+        &-content
+            .title
+                font-size: 20px
+                font-weight: 600
+            .text
+                margin-top: 10px
