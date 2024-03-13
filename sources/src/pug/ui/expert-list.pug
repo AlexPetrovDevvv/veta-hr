@@ -1,0 +1,36 @@
+mixin expert-list(obj = {})
+    -
+        obj = {
+            tag: 'ol',
+            items: [
+                {
+                    title: '',
+                    text: ''
+                }
+            ],
+            ...obj
+        }
+    #{obj.tag}.expert-list&attributes(attributes)
+        each item in obj.items
+            +expert-item({
+                title: item.title,
+                text: item.text,
+            })
+
+mixin expert-item(obj = {})
+    -
+        obj = {
+            tag: 'li',
+            title: '',
+            text: '',
+            ...obj
+        }
+    #{obj.tag}.expert-item&attributes(attributes)
+        .expert-item__content
+            +title({
+                tag: 'h5',
+                title: obj.title
+            }).expert-item__title
+            +text({
+                text: obj.text
+            }).expert-item__text

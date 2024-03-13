@@ -35,7 +35,8 @@ mixin ui-list-item(obj = {})
     )&attributes(attributes)
         if obj.icon
             .ui-list__item-icon
-                img(src=obj.icon, alt="icon")
+                +icon(obj.icon)
+                //- img(src=obj.icon, alt="icon")
         .ui-list__item-content
             +title({
                 tag: 'h4',

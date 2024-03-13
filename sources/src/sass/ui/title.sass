@@ -2,10 +2,16 @@
     font-weight: 700
     font-size: 52px
     color: var(--blue)
+    @media (max-width: $md)
+        font-size: 34px
     &_big
         font-size: 54px
+        @media (max-width: $md)
+            font-size: 36px
     &_min
         font-size: 28px
         color: var(--alternate-blue)
+        @media (max-width: $sm)
+            font-size: 20px
     &_white
         color: var(--white-text)

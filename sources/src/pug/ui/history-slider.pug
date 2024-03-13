@@ -1,0 +1,37 @@
+mixin history-slider(obj = {})
+    -
+        obj = {
+            tag: 'div',
+            items: [
+                {
+                    src: '',
+                    name: '',
+                    post: '',
+                    description: ''
+                }
+            ],
+            ...obj
+        }
+    #{obj.tag}.history-slider&attributes(attributes)
+        button.history-slider__button.history-slider__button_prev
+            +use('arrow_cc')
+        .swiper
+            .swiper-wrapper
+                each item in obj.items
+                    .swiper-slide.history-slider__item.person
+                        .person__information-box
+                            if item.src
+                                img.person__image(src=item.src, alt="")
+                            else
+                                span.person__image.person__image_bg-gray
+                            .person__information
+                                if item.name
+                                    span.person__name !{item.name}
+                                if item.post
+                                    span.person__post !{item.post}
+                        if item.description
+                            +text({
+                                text: item.description
+                            }).person__description
+        button.history-slider__button.history-slider__button_next
+            +use('arrow_cc')

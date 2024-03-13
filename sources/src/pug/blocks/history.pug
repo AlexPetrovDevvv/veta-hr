@@ -1,0 +1,23 @@
+mixin history(obj = {})
+    -
+        obj = {
+            tag: 'section',
+            title: '',
+            items: [
+                {
+                    src: '',
+                    name: '',
+                    post: '',
+                    description: ''
+                }
+            ],
+            ...obj
+        }
+    #{obj.tag}.history.section&attributes(attributes)
+        .container
+            +title({
+                title: obj.title
+            })
+            +history-slider({
+                items: obj.items
+            }).history__slider

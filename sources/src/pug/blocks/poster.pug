@@ -1,0 +1,33 @@
+mixin poster(obj = {})
+    -
+        obj = {
+            tag: 'section',
+            src: '',
+            title: '',
+            text: '',
+            href: '',
+            linkText: '',
+            blue: false,
+            reverse: false,
+            ...obj
+        }
+    #{obj.tag}.poster.section(
+        class=(obj.blue ? 'poster_blue' : false)
+        class=(obj.reverse ? 'poster_reverse' : false)
+    )&attributes(attributes)
+        .container
+            .poster__content
+                +title({
+                    title: obj.title
+                }).poster__title
+                if obj.text
+                    +text({
+                        text:obj.text
+                    }).poster__text
+                +button({
+                    tag: 'a',
+                    href: obj.href,
+                    text: obj.linkText,
+                    blue: obj.blue
+                }).poster__button
+            img(src=obj.src, alt="poster").poster__image

@@ -1,0 +1,40 @@
+mixin career-list(obj = {})
+    -
+        obj = {
+            tag: 'div',
+            text: '',
+            items: [
+                {
+                    title: '',
+                    text: '',
+                    blue: false,
+                    icons: [
+                        {
+                            src: '',
+                        }
+                    ]
+                }
+            ],
+            ...obj
+        }
+    #{obj.tag}.career-list__wrapper&attributes(attributes)
+        if obj.text
+            +text({
+                text: obj.text
+            }).career-list__text
+        ul.career-list
+            each item in obj.items
+                li.career-list__item.career-item
+                    .career-item__content(
+                        class=(item.blue ? 'career-item__content_blue' : false)
+                    )
+                        +title({
+                            tag: 'h5',
+                            title: item.title,
+                        })
+                        +text({
+                            text: item.text,
+                        }).career-item__text
+                    each icon in item.icons
+                        .career-item__icon
+                            img(src=icon.src, alt="book")

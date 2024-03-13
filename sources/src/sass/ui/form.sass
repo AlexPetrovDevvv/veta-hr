@@ -2,6 +2,8 @@
     &__content
         display: flex
         gap: 24px
+        @media (max-width: $md)
+            flex-direction: column
         &-left
             display: flex
             flex-direction: column
@@ -80,37 +82,44 @@
         color: var(--blue)
         transition: .3s ease-in-out
         transition-property: border-color
+        @media (max-width: $md)
+            height: 120px
         &:focus
             border-color: var(--red)
     &__checkbox
         display: none
-        &:checked ~ .form__checkbox-text:before
+        &:checked ~ .form__checkbox-icon
             background: url(../images/icons/check.svg) no-repeat center center
         &-box
-            display: block
+            display: flex
+            align-items: center
             max-width: 408px
             width: 100%
             margin-top: 24px
+        &-icon
+            border: 2px solid var(--gray)
+            width: 20px
+            height: 20px
+            margin-right: 16px
         &-text
             font-family: var(--second-family)
             font-weight: 400
             font-size: 14px
             color: var(--gray)
-            display: flex
+            display: block
             align-items: center
             cursor: pointer
-            &:before
-                display: block
-                content: ''
-                border: 2px solid var(--gray)
-                width: 20px
-                height: 20px
-                margin-right: 16px
+            @media (max-width: $sm)
+                font-size: 12px
             a
                 font-family: var(--second-family)
                 font-weight: 400
                 font-size: 14px
                 color: var(--gray)
                 text-decoration: underline
+                @media (max-width: $sm)
+                    font-size: 12px
     &__button
         margin-top: 50px
+        @media (max-width: $sm)
+            margin-top: 25px

@@ -1,0 +1,14 @@
+mixin expert(obj = {})
+    -
+        obj = {
+            tag: 'section',
+            ...obj
+        }
+    #{obj.tag}.expert.section&attributes(attributes)
+        .container
+            +title({
+                title: obj.title
+            })
+            +expert-list({
+                items: obj.items
+            }).expert__list

@@ -1,0 +1,20 @@
+mixin training(obj = {})
+    -
+        obj = {
+            tag: 'section',
+            title: '',
+            items: [
+                {
+                    text: ''
+                }
+            ],
+            ...obj
+        }
+    #{obj.tag}.training.section&attributes(attributes)
+        .container
+            +title({
+                title: obj.title
+            }).training__title
+            +training-list({
+                items: obj.items
+            }).training__list

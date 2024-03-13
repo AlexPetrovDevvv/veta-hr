@@ -132,5 +132,11 @@ input[type=text]::-ms-reveal
 
 .section
     padding: 108px 0 144px
+    @media (max-width: $md)
+        padding: 40px 0
     &_blue
         background-color: var(--blue-bg)
+    &_alternate
+        padding: 108px 0 0
+        @media (max-width: $md)
+        padding: 40px 0 0

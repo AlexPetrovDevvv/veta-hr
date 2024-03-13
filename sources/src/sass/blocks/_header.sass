@@ -5,11 +5,17 @@
     top: 0
     left: 0
     z-index: 2
+    &_background
+        position: static
+        background: var(--blue) radial-gradient(50% 50% at 80% 50%, #1F4F9A 0%, #002B55 100%)
     .container
         display: flex
         align-items: center
     &__menu
         margin-left: auto
+        &-burger
+            @media (max-width: $lg)
+                margin-left: auto
     &__phone
         display: block
         color: var(--light-gray-text)
@@ -18,12 +24,17 @@
         font-size: 14px
         cursor: pointer
         margin-left: 31px
+        @media (max-width: $lg)
+            margin-left: 20px
 
 .logo
     display: block
     width: 101px
     height: 33px
     cursor: pointer
+    @media (max-width: $md)
+        width: 80px
+        height: 25px
     img
         display: block
         width: 100%
@@ -32,6 +43,32 @@
 .menu
     display: flex
     gap: 31px
+    @media (max-width: $lg)
+        display: inline-flex
+        flex-direction: column
+        height: 100%
+        padding: 50px 100px
+        background: var(--blue)
+        transform: translateX(-316px)
+        transition: .3s ease-in-out
+        transition-property: transform
+        &-box
+            width: 100%
+            height: 100%
+            position: fixed
+            top: 0
+            left: 0
+            z-index: 100
+            background: rgba(0, 0, 0, 0.3)
+            opacity: 0
+            pointer-events: none
+            transition: .3s ease-in-out
+            transition-property: opacity
+            &.open
+                opacity: 1
+                pointer-events: auto
+                .menu
+                    transform: translateX(0)
     &__item
         display: block
         color: var(--light-gray-text)
@@ -39,3 +76,20 @@
         font-weight: 500
         font-size: 14px
         cursor: pointer
+
+
+.burger-menu
+    display: none
+    border: none
+    background: none
+    @media (max-width: $lg)
+        display: block
+    &__item
+        display: block
+        width: 30px
+        height: 2px
+        background-color: #8bc2f5
+        border-radius: 1px
+        &:not(:first-child)
+            margin-top: 4px
+

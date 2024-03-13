@@ -1,0 +1,53 @@
+mixin vacancy-list(obj = {})
+    -
+        obj = {
+            tag: 'ul',
+            items: [
+                {
+                    title: '',
+                    text: '',
+                    href: '',
+                    linkText: '',
+                }
+            ],
+            gray: false,
+            ...obj
+        }
+    #{obj.tag}.vacancy-list&attributes(attributes)
+        each item in obj.items
+            +vacancy-item({
+                title: item.title,
+                text: item.text,
+                href: item.href,
+                linkText: item.linkText,
+                gray: obj.gray
+            }).vacancy-list__item
+
+
+mixin vacancy-item(obj = {})
+    -
+        obj = {
+            tag: 'li',
+            title: '',
+            text: '',
+            href: '',
+            linkText: '',
+            gray: false,
+            ...obj
+        }
+    #{obj.tag}.vacancy-item(
+        class=(obj.gray ? 'vacancy-item_gray-bg' : false)
+    )&attributes(attributes)
+        +title({
+            tag: 'h4',
+            title: obj.title
+        }).vacancy-item__title
+        +text({
+            text: obj.text
+        }).vacancy-item__description
+        +button({
+            tag: 'a',
+            href: obj.href,
+            text: obj.linkText,
+            blue: true
+        }).vacancy-item__button

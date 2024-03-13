@@ -3,15 +3,36 @@
     background-color: var(--blue)
     &__main
         display: flex
-    &__content
+        @media (max-width: $lg)
+            gap: 60px
+    &__logo
+        flex: none
+    &__wrapper
+        display: flex
         margin-left: 86px
+        width: 100%
+        justify-content: space-between
+        @media (max-width: $xl)
+            margin-left: 23px
+        @media (max-width: $lg)
+            flex-direction: column
+            gap: 24px
+            margin-left: auto
+            width: auto
     &__menu
         display: flex
         gap: 50px
+        @media (max-width: $xl)
+            gap: 25px
+        @media (max-width: $sm)
+            flex-direction: column
+            gap: 15px
         &-item
             font-weight: 700
             font-size: 16px
             color: var(--footer-blue-text)
+            @media (max-width: $sm)
+                font-size: 14px
     &__contacts
         margin-top: 30px
         &-title
@@ -25,10 +46,14 @@
         letter-spacing: 0.1em
         text-transform: uppercase
         color: var(--footer-blue-text)
+        @media (max-width: $sm)
+            font-size: 12px
         &-box
             display: flex
             gap: 17px
             margin-top: 13px
+            @media (max-width: $sm)
+                flex-direction: column
     &__link
         font-family: var(--font-family)
         font-weight: 600
@@ -61,14 +86,25 @@
             margin-top: 13px
         &-list
             margin-left: auto
+            @media (max-width: $lg)
+                margin-left: 0
     &__sub
         margin-top: 100px
         display: flex
         justify-content: space-between
+        gap: 20px
+        @media (max-width: $md)
+            gap: 15px
+            margin-top: 50px
+        @media (max-width: 460px)
+            flex-direction: column
+            align-items: center
         &-text
             font-family: var(--second-family)
             font-weight: 400
             font-size: 14px
+            @media (max-width: $md)
+                font-size: 12px
             color: var(--dark-footer-blue-text)
             &-link
                 cursor: pointer

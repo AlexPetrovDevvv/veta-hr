@@ -1,0 +1,14 @@
+mixin training-list(obj = {})
+    -
+        obj = {
+            tag: 'ol',
+            items: [
+                {
+                    text: ''
+                }
+            ],
+            ...obj
+        }
+    #{obj.tag}.training-list&attributes(attributes)
+        each item in obj.items
+            li.training-list__item.training-item !{item.text}

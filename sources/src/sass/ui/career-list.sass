@@ -1,0 +1,88 @@
+.career-list
+    margin-left: auto
+    display: flex
+    flex-direction: column
+    align-items: flex-end
+    @media (max-width: $xl)
+        margin-left: 0
+        display: grid
+        grid-template-columns: repeat(4, 1fr)
+        grid-auto-rows: 1fr
+        gap: 24px
+        margin-top: 50px
+        align-items: stretch
+    @media (max-width: $lg)
+        grid-template-columns: repeat(3, 1fr)
+    @media (max-width: $md)
+        grid-template-columns: repeat(2, 1fr)
+    @media (max-width: 460px)
+        grid-template-columns: 1fr
+    &__wrapper
+        padding: 70px
+        padding-left: 164px
+        background-color: var(--light-blue-bg)
+        position: relative
+        z-index: 1
+        display: flex
+        @media (max-width: $xl)
+            display: block
+        @media (max-width: $xl)
+            padding: 70px
+    &__text
+        position: absolute
+        top: 65px
+        left: 72px
+        max-width: 376px
+        width: 100%
+        @media (max-width: $xl)
+            position: static
+    &__item
+        &:not(:first-child)
+            margin-top: 53px
+            @media (max-width: $xl)
+                margin-top: 0
+
+.career-item
+    display: flex
+    align-items: center
+    gap: 35px
+    &__content
+        padding: 11px 40px 15px 30px
+        background-color: var(--dark-blue-bg)
+        border-radius: 20px
+        @media (max-width: $xl)
+            width: 100%
+            height: 100%
+        .title
+            font-weight: 600
+            font-size: 16px
+            color: var(--dark-gray)
+            white-space: nowrap
+            @media (max-width: $xl)
+                white-space: wrap
+            @media (max-width: $sm)
+                font-size: 14px
+        .text
+            font-size: 14px
+            white-space: nowrap
+            @media (max-width: $xl)
+                white-space: wrap
+            @media (max-width: $sm)
+                font-size: 12px
+        &_blue
+            background-color: var(--blue)
+            .title
+                color: var(--white)
+            .text
+                color: var(--white)
+    &__icon
+        width: 70px
+        height: 70px
+        flex: none
+        @media (max-width: $xl)
+            display: none
+        img
+            display: block
+            width: 100%
+            height: 100%
+            object-fit: cover

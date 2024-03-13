@@ -3,6 +3,8 @@ mixin work-in-group(obj = {})
         obj = {
             tag: 'section',
             title: '',
+            description: '',
+            text: '',
             items: [
                 {
                     icon: '',
@@ -10,13 +12,35 @@ mixin work-in-group(obj = {})
                     text: '',
                 }
             ],
+            href: '',
+            linkText: '',
+            blue: false,
             ...obj
         }
-    #{obj.tag}.work-in-group.section.section_blue&attributes(attributes)
+    #{obj.tag}.work-in-group.section(
+        class=(obj.blue ? 'section_blue' : false)
+    )&attributes(attributes)
         .container
             +title({
                 title: obj.title
             }).work-in-group__title
+            if obj.description
+                +text({
+                    text: obj.description,
+                    description: true
+                }).work-in-group__description
             +ui-list({
                 items: obj.items
             }).work-in-group__list
+            if obj.text
+                +text({
+                    text: obj.text,
+                    description: true
+                }).work-in-group__text
+            if obj.linkText
+                +button({
+                    tag: 'a',
+                    href: obj.href,
+                    text: obj.linkText,
+                    blue: true
+                }).work-in-group__button

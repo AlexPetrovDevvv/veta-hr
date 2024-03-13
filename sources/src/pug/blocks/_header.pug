@@ -29,7 +29,12 @@ mixin header(obj = {})
         .container
             a.header__logo.logo(href=obj.href)
                 img(src=obj.src, alt="logo")
-            nav.header__menu.menu
-                each item in obj.items
-                    a.menu__item(href=item.href) !{item.text}
+            button.header__menu-burger.burger-menu
+                span.burger-menu__item
+                span.burger-menu__item
+                span.burger-menu__item
+            .header__menu.menu-box
+                nav.menu
+                    each item in obj.items
+                        a.menu__item(href=item.href) !{item.text}
             a.header__phone(href=obj.hrefPhone) !{obj.phone}

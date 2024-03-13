@@ -1,0 +1,59 @@
+.poster
+    .container
+        padding: 52px 160px 48px 101px
+        display: flex
+        align-items: center
+        gap: 30px
+        background: var(--blue) radial-gradient(50% 50% at 80% 50%, #1F4F9A 0%, #002B55 100%)
+        border-radius: 20px
+        @media (max-width: $lg)
+            padding: 52px 80px 48px
+        @media (max-width: $md)
+            flex-direction: column
+    &__content
+        max-width: 448px
+        width: 100%
+        @media (max-width: $md)
+            order: 1
+            margin-left: 0
+    .title
+        font-weight: 600
+        font-size: 20px
+        letter-spacing: 0.2em
+        text-transform: uppercase
+        color: var(--light-blue-text)
+    .text
+        font-weight: 400
+        font-size: 16px
+        color: var(--light-blue-text)
+        margin-top: 33px
+        @media (max-width: $sm)
+            margin-top: 15px
+    &__button
+        margin-top: 58px
+        @media (max-width: $sm)
+            margin-top: 25px
+    &__image
+        display: block
+        height: 100%
+        margin-left: auto
+        object-fit: cover
+        @media (max-width: $md)
+            order: 0
+            margin-left: 0
+            width: 80%
+    &_blue
+        .container
+            background: var(--cyan)
+        .title
+            color: var(--dark-blue)
+        .text
+            color: var(--dark-gray)
+    &_reverse
+        .poster
+            &__image
+                order: 0
+                margin-left: 0
+            &__content
+                order: 1
+                margin-left: auto

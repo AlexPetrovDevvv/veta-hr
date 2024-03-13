@@ -55,5 +55,9 @@
         "not dead",
         "IE >= 10",
         "iOS >= 7"
-    ]
+    ],
+    "dependencies": {
+        "body-scroll-lock": "4.0.0-beta.0",
+        "swiper": "^11.0.7"
+    }
 }

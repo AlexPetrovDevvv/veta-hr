@@ -1,0 +1,28 @@
+mixin career(obj = {})
+    -
+        obj = {
+            tag: 'section',
+            title: '',
+            text: '',
+            items: [
+                {
+                    title: '',
+                    text: '',
+                    icons: [
+                        {
+                            src: '',
+                        }
+                    ]
+                }
+            ],
+            ...obj
+        }
+    #{obj.tag}.career.section.section_blue&attributes(attributes)
+        .container
+            +title({
+                title: obj.title
+            }).important__title
+            +career-list({
+                text: obj.text,
+                items: obj.items,
+            }).career__list

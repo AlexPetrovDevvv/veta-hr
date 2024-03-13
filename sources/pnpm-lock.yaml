@@ -7,6 +7,14 @@ settings:
 overrides:
   colors: 1.4.0
 
+dependencies:
+  body-scroll-lock:
+    specifier: 4.0.0-beta.0
+    version: 4.0.0-beta.0
+  swiper:
+    specifier: ^11.0.7
+    version: 11.0.7
+
 devDependencies:
   browser-sync:
     specifier: ^2.27.7
@@ -1255,6 +1263,10 @@ packages:
   /bmp-js@0.1.0:
     resolution: {integrity: sha1-4Fpj95amwf8l9Hcex62twUjAcjM=}
     dev: true
+
+  /body-scroll-lock@4.0.0-beta.0:
+    resolution: {integrity: sha512-a7tP5+0Mw3YlUJcGAKUqIBkYYGlYxk2fnCasq/FUph1hadxlTRjF+gAcZksxANnaMnALjxEddmSi/H3OR8ugcQ==}
+    dev: false
 
   /boolbase@1.0.0:
     resolution: {integrity: sha1-aN/1++YMUes3cl6p4+0xDcwed24=}
@@ -7989,6 +8001,11 @@ packages:
       picocolors: 1.0.0
       stable: 0.1.8
     dev: true
+
+  /swiper@11.0.7:
+    resolution: {integrity: sha512-cDfglW1B6uSmB6eB6pNmzDTNLmZtu5bWWa1vak0RU7fOI9qHjMzl7gVBvYSl34b0RU2N11HxxETJqQ5LeqI1cA==}
+    engines: {node: '>= 4.7.0'}
+    dev: false
 
   /symbol-observable@1.0.1:
     resolution: {integrity: sha1-g0D8RwLDEi310iKI+IKD9RPT/dQ=}

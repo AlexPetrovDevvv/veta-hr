@@ -1,0 +1,25 @@
+mixin vacancy(obj = {})
+    -
+        obj = {
+            tag: 'section',
+            title: '',
+            items: [
+                {
+                    title: '',
+                    text: '',
+                    href: '',
+                    linkText: '',
+                }
+            ],
+            gray: false,
+            ...obj
+        }
+    #{obj.tag}.vacancy.section&attributes(attributes)
+        .container
+            +title({
+                title: obj.title
+            })
+            +vacancy-list({
+                items: obj.items,
+                gray: obj.gray
+            }).vacancy__list

@@ -1,0 +1,32 @@
+mixin important(obj = {})
+    -
+        obj = {
+            tag: 'section',
+            title: '',
+            items: [
+                {
+                    text: ''
+                }
+            ],
+            href: '',
+            linkText: '',
+            src: '',
+            ...obj
+        }
+    #{obj.tag}.important.section.section_blue&attributes(attributes)
+        .container
+            .important__content
+                +title({
+                    title: obj.title
+                }).important__title
+                +check-list({
+                    items: obj.items
+                }).important__list
+                +button({
+                    tag: 'a',
+                    href: obj.href,
+                    text: obj.linkText,
+                    blue: true
+                }).important__button
+            .important__picture
+                img(src=obj.src, alt="important")

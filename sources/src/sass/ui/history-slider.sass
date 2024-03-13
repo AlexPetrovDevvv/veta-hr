@@ -1,0 +1,74 @@
+.history-slider
+    width: 100%
+    display: flex
+    align-items: center
+    gap: 15px
+    &__button
+        width: 28px
+        height: 28px
+        color: var(--blue)
+        border: none
+        background: none
+        @media (max-width: $md)
+            display: none
+        .use-icon
+            width: 100%
+            height: 100%
+        &_prev
+            transform: rotate(180deg)
+    &__item
+        max-width: 554px
+        height: 587px
+
+.swiper
+    width: 1132px
+    height: 574px
+
+.person
+    padding: 45px 69px 45px 57px
+    border-radius: 20px
+    background: var(--bark-blue-bg) radial-gradient(49.88% 49.89% at 51.52% 52.91%, rgb(235, 237, 245) 39.58333432674408%, rgb(230, 233, 242) 100%)
+    &__information
+        &-box
+            display: flex
+            align-items: center
+            gap: 30px
+            @media (max-width: $xsm)
+                flex-direction: column
+    &__image
+        display: block
+        width: 110px
+        height: 110px
+        border-radius: 100%
+        object-fit: cover
+        @media (max-width: 986px)
+            width: 80px
+            height: 80px
+        &_bg-gray
+            background-color: var(--bg-gray)
+    &__name
+        font-weight: 600
+        font-size: 18px
+        color: var(--dark-gray)
+        display: block
+        @media (max-width: 986px)
+            font-size: 16px
+        @media (max-width: $xsm)
+            text-align: center
+    &__post
+        font-weight: 300
+        font-size: 14px
+        color: var(--dark-gray)
+        margin-top: 4px
+        display: block
+        @media (max-width: $xsm)
+            text-align: center
+    &__description
+        margin-top: 28px
+        @media (max-width: 986px)
+            font-size: 14px
+        @media (max-width: $xsm)
+            -webkit-line-clamp: 16
+            display: -webkit-box
+            -webkit-box-orient: vertical
+            overflow: hidden
