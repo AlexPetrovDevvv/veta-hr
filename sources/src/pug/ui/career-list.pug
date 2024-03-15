@@ -15,6 +15,7 @@ mixin career-list(obj = {})
                     ]
                 }
             ],
+            max: false,
             ...obj
         }
     #{obj.tag}.career-list__wrapper&attributes(attributes)
@@ -24,7 +25,9 @@ mixin career-list(obj = {})
             }).career-list__text
         ul.career-list
             each item in obj.items
-                li.career-list__item.career-item
+                li.career-list__item.career-item(
+                    class=(obj.max ? 'career-list__item_max' : false)
+                )
                     .career-item__content(
                         class=(item.blue ? 'career-item__content_blue' : false)
                     )
@@ -36,5 +39,7 @@ mixin career-list(obj = {})
                             text: item.text,
                         }).career-item__text
                     each icon in item.icons
-                        .career-item__icon
+                        .career-item__icon(
+                            class=(obj.max ? 'career-item__icon_max' : false)
+                        )
                             img(src=icon.src, alt="book")

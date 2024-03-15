@@ -15,6 +15,7 @@ mixin career(obj = {})
                     ]
                 }
             ],
+            max: false,
             ...obj
         }
     #{obj.tag}.career.section.section_blue&attributes(attributes)
@@ -25,4 +26,5 @@ mixin career(obj = {})
             +career-list({
                 text: obj.text,
                 items: obj.items,
+                max: obj.max
             }).career__list

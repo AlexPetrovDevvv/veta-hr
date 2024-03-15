@@ -41,6 +41,11 @@
             margin-top: 53px
             @media (max-width: $xl)
                 margin-top: 0
+        &_max
+            &:not(:first-child)
+                margin-top: 21px
+                @media (max-width: $xl)
+                    margin-top: 0
 
 .career-item
     display: flex
@@ -79,6 +84,9 @@
         width: 70px
         height: 70px
         flex: none
+        &_max
+            width: 60px
+            height: 60px
         @media (max-width: $xl)
             display: none
         img

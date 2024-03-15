@@ -1,11 +1,12 @@
 .hero
-    padding: 170px 0 117px 0
+    padding: 178px 0 117px 0
     background: var(--blue) radial-gradient(50% 50% at 80% 50%, #1F4F9A 0%, #002B55 100%)
-    position: relative
-    z-index: 1
     overflow: hidden
     @media (max-width: $md)
         padding: 110px 0 60px 0
+    .container
+        position: relative
+        z-index: 1
     &__content
         max-width: 690px
         width: 100%
@@ -18,10 +19,8 @@
     &__picture
         position: absolute
         z-index: -1
-        bottom: 0
-        right: 20%
-        @media (max-width: 1600px)
-            right: 5%
+        bottom: -117px
+        right: 0
         @media (max-width: $xl)
             right: -5%
         img

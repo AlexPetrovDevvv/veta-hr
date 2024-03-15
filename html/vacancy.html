@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <title>Вакансии</title>
+    <meta charset="utf-8">
+    <meta name="keywords" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="shortcut icon" href="images/favicons/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="images/favicons/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicons/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="images/favicons/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="images/favicons/android-chrome-96x96.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicons/favicon-16x16.png">
+    <link rel="manifest" href="images/favicons/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="images/favicons/mstile-144x144.png">
+    <meta name="msapplication-config" content="images/favicons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="css/main.min.css">
+  </head>
+  <body>
+    <header class="header">
+      <div class="container"><a class="header__logo logo" href="#"><img src="./images/logo.svg" alt="logo"/></a>
+        <button class="header__menu-burger burger-menu"><span class="burger-menu__item"></span><span class="burger-menu__item"></span><span class="burger-menu__item"></span></button>
+        <div class="header__menu menu-box">
+          <nav class="menu"><a class="menu__item" href="#">Студентам</a><a class="menu__item" href="#">Профессионалам</a><a class="menu__item" href="#">Вакансии</a><a class="menu__item" href="#">Мы ВКонтакте</a>
+          </nav>
+        </div><a class="header__phone" href="#">+7 (800) 775–04–99</a>
+      </div>
+    </header>
+    <main class="main">
+      <section class="vacancy section">
+        <div class="container">
+          <h2 class="title">Открытые вакансии</h2>
+          <ul class="vacancy-list vacancy__list">
+            <li class="vacancy-item vacancy-list__item">
+              <h4 class="title vacancy-item__title">Стажёр</h4>
+              <p class="text vacancy-item__description">Ищем студентов, которые думают о профессиональной карьере уже на старших курсах и хотят найти применение своим способностям. С нами вы можете попасть в «высшую лигу» прямо со студенческой скамьи</p>
+              <a class="button btn-red blue-dark vacancy-item__button" href="#">Полная вакансия</a>
+            </li>
+            <li class="vacancy-item vacancy-list__item">
+              <h4 class="title vacancy-item__title">Стажёр-экономист</h4>
+              <p class="text vacancy-item__description">Ищем студентов, которые думают о профессиональной карьере уже на старших курсах и хотят найти применение своим способностям. С нами вы можете попасть в «высшую лигу» прямо со студенческой скамьи</p>
+              <a class="button btn-red blue-dark vacancy-item__button" href="#">Полная вакансия</a>
+            </li>
+            <li class="vacancy-item vacancy-list__item">
+              <h4 class="title vacancy-item__title">Подработка для студентов от 1 курса</h4>
+              <p class="text vacancy-item__description">Ищем студентов, которые думают о профессиональной карьере уже на старших курсах и хотят найти применение своим способностям. своим способностям. </p>
+              <a class="button btn-red blue-dark vacancy-item__button" href="#">Полная вакансия</a>
+            </li>
+            <li class="vacancy-item vacancy-list__item">
+              <h4 class="title vacancy-item__title">IT-стажёр</h4>
+              <p class="text vacancy-item__description">Ищем студентов, которые думают о профессиональной карьере уже на старших курсах и хотят найти применение своим способностям. С нами вы можете попасть в «высшую лигу» прямо со студенческой скамьи </p>
+              <a class="button btn-red blue-dark vacancy-item__button" href="#">Полная вакансия</a>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section class="request-form section">
+        <div class="container">
+          <div class="wrapper">
+            <h2 class="title">Расскажите о себе</h2>
+            <form class="form request-form__form">
+              <div class="form__content">
+                <div class="form__content-left">
+                  <input class="form__input" type="text" name="name" placeholder="Как вас зовут"></input>
+                  <input class="form__input" type="tel" name="phone" placeholder="Ваш телефон"></input>
+                  <input class="form__input" type="email" name="email" placeholder="Ваш email"></input>
+                </div>
+                <div class="form__content-right">
+                  <div class="form__select-box">
+                    <div class="form__select-field">Кто вы</div>
+                    <select class="form__select">
+                      <option value="" style="display: none;"></option>
+                      <option value="Студент">Студент</option>
+                      <option value="Профессионал">Профессионал</option>
+                    </select>
+                  </div>
+                  <textarea class="form__textarea" placeholder="О себе"></textarea>
+                </div>
+              </div>
+              <label class="form__checkbox-box">
+                <input class="form__checkbox" type="checkbox"/><span class="form__checkbox-icon"></span><span class="form__checkbox-text">Соглашаюсь на <a href="#">обработку персональных данных</a></span>
+              </label>
+              <button class="button btn-red form__button">Отправить</button>
+            </form>
+            <div class="request-form__picture"><img src="./images/traces.png" alt=""/></div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__main"><a class="footer__logo logo" href="#"><img src="./images/logo.svg" alt="logo"/></a>
+          <div class="footer__wrapper">
+            <div class="footer__content">
+              <nav class="footer__menu"><a class="footer__menu-item" href="#">Студентам</a><a class="footer__menu-item" href="#">Профессионалам</a><a class="footer__menu-item" href="#">Вакансии</a>
+              </nav>
+              <div class="footer__contacts">
+                <h4 class="footer__contacts-title">Связаться с нами:</h4>
+                <div class="footer__phone-box"><a class="footer__phone" href="#">+7 (800) 775–04–99</a><a class="footer__phone" href="#">+7 967 712-36-92</a>
+                </div>
+                <div class="footer__link-box"><a class="footer__link" href="#">veta.expert</a><a class="footer__link-icon" href="#">
+                    <span class="svg-image-vk icon"></span></a></div>
+              </div>
+            </div>
+            <div class="footer__address-list">
+              <h4 class="footer__contacts-title">Адреса:</h4>
+              <address class="footer__address">Нижний Новгород, ул. Ульянова, д. 10а, вход 2, этаж 8</address>
+              <address class="footer__address">Москва, Бол. Строченовский пер., 7, Бизнес-центр Велка</address>
+            </div>
+          </div>
+        </div>
+        <div class="footer__sub"><span class="footer__sub-text">© 1999–2023 Экспертная группа Veta</span><a class="footer__sub-text footer__sub-text_link" href="https://veta.expert/law/">Политика конфиденциальности</a><span class="footer__sub-text">Сайт сделан в бюро Flavita</span></div>
+      </div>
+    </footer>
+    <div id="toTop"></div>
+    <script src="js/main.min.js"></script>
+  </body>
+</html>
