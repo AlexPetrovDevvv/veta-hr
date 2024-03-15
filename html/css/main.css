@@ -842,7 +842,6 @@ input[type=text]::-ms-reveal {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  gap: 57px;
   -webkit-align-items: flex-start;
   -ms-flex-align: start;
   align-items: flex-start
@@ -873,7 +872,7 @@ input[type=text]::-ms-reveal {
   position: absolute;
   z-index: -1;
   bottom: -144px;
-  right: -214px
+  right: -16px
 }
 @media (max-width:1400px) {
   .about__picture {
@@ -1545,7 +1544,7 @@ input[type=text]::-ms-reveal {
   line-height: 144%
 }
 .check-list-box {
-  max-width: 518px;
+  max-width: 506px;
   width: 100%
 }
 .ui-list {
