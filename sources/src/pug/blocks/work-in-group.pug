@@ -15,6 +15,12 @@ mixin work-in-group(obj = {})
             href: '',
             linkText: '',
             blue: false,
+            workListTiitle: '',
+            workList: [
+                {
+                    text: ''
+                }
+            ],
             ...obj
         }
     #{obj.tag}.work-in-group.section(
@@ -32,6 +38,12 @@ mixin work-in-group(obj = {})
             +ui-list({
                 items: obj.items
             }).work-in-group__list
+            if obj.workListTiitle
+                .work-in-group__check-list-box
+                    +check-list({
+                        title: obj.workListTiitle,
+                        items: obj.workList
+                    }).work-in-group__check-list
             if obj.text
                 +text({
                     text: obj.text,

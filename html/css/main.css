@@ -914,6 +914,21 @@ input[type=text]::-ms-reveal {
     margin-top: 30px
   }
 }
+.work-in-group__check-list .title {
+  font-size: 20px
+}
+.work-in-group__check-list-box {
+  padding: 37px 37px 65px 57px;
+  border-radius: 20px;
+  background-color: var(--blue-bg);
+  margin-top: 43px;
+  display: inline-block
+}
+@media (max-width:540px) {
+  .work-in-group__check-list-box {
+    padding: 30px
+  }
+}
 .work-in-group__text {
   margin-top: 43px;
   max-width: 617px;
@@ -1293,13 +1308,8 @@ input[type=text]::-ms-reveal {
   font-weight: 400;
   font-size: 14px;
   color: var(--footer-blue-text);
-  font-style: normal
-}
-.footer__address:not(:first-child) {
-  margin-top: 18px
-}
-.footer__address:first-child {
-  margin-top: 13px
+  font-style: normal;
+  margin-top: 12px
 }
 .footer__address-list {
   margin-left: auto
