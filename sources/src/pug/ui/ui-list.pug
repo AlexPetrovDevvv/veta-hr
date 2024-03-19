@@ -9,9 +9,12 @@ mixin ui-list(obj = {})
                     text: '',
                 }
             ],
+            noIcon: false,
             ...obj
         }
-    #{obj.tag}.ui-list&attributes(attributes)
+    #{obj.tag}.ui-list(
+        class=(obj.noIcon ? "ui-list_no-icon" : false )
+    )&attributes(attributes)
         each item in obj.items
             +ui-list-item({
                 icon: item.icon,

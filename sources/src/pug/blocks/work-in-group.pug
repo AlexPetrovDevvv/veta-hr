@@ -3,7 +3,11 @@ mixin work-in-group(obj = {})
         obj = {
             tag: 'section',
             title: '',
-            description: '',
+            description: [
+                {
+                    text: ''
+                }
+            ],
             text: '',
             items: [
                 {
@@ -31,13 +35,16 @@ mixin work-in-group(obj = {})
                 title: obj.title
             }).work-in-group__title
             if obj.description
-                +text({
-                    text: obj.description,
-                    description: true
-                }).work-in-group__description
+                .work-in-group__description-box
+                    each item in obj.description
+                        +text({
+                            text: item.text
+                        }).work-in-group__description
             +ui-list({
                 items: obj.items
-            }).work-in-group__list
+            }).work-in-group__list(
+                class=(obj.description ? 'work-in-group__list_text' : false)
+            )
             if obj.workListTiitle
                 .work-in-group__check-list-box
                     +check-list({
